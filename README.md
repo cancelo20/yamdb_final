@@ -1,4 +1,4 @@
-![yamdb workflow](https://github.com/cancelo20/yamdb_final/actions/workflows/main.yml/badge.svg)
+[![Django-app workflow](https://github.com/cancelo20/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master)](https://github.com/cancelo20/yamdb_final/actions/workflows/yamdb_workflow.yml)
 
 Описание
 
