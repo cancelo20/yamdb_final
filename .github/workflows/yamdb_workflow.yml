@@ -65,7 +65,6 @@ jobs:
         script: |
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:v1
           sudo docker stop $(sudo docker ps -a -q)
-          cd infra/
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
@@ -76,6 +75,10 @@ jobs:
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
           sudo docker-compose up -d --build
+          sudo docker-compose exec web python manage.py migrate
+          sudo docker-compose exec web python manage.py collectstatic --no-input
+          sudo docker system prune -af
+          sudo docker volume prune -f
 
   send_message:
     runs-on: ubuntu-latest
