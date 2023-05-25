@@ -5,7 +5,7 @@ from .views import (
     CommentViewSet,
     GenresViewSet,
     ReviewViewSet,
-    TitlesViewSet,
+    TitlesViewSet
 )
 
 
