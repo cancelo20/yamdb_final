@@ -29,6 +29,7 @@ jobs:
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     needs: tests
     steps:
       - name: Check out the repo
@@ -63,8 +64,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:v1
-          sudo docker-compose stop
-          sudo docker-compose rm web
+          sudo docker-compose down -v
           touch .env
           echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
           echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -73,6 +73,10 @@ jobs:
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
           sudo docker-compose up -d --build
+          sudo docker-compose exec web python manage.py migrate
+          sudo docker-compose exec web python manage.py collectstatic --no-input
+          sudo docker system prune -af
+          sudo docker volume prune -f
 
   send_message:
     runs-on: ubuntu-latest

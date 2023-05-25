@@ -1,4 +1,4 @@
-![badge](https://github.com/cancelo20/yamdb_final/actions/workflows/yamdb_final.yml/badge.svg)
+![yamdb workflow](https://github.com/cancelo20/yamdb_final/actions/workflows/main.yml/badge.svg)
 
 Описание
 
