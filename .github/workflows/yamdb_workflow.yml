@@ -64,7 +64,8 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:v1
-          ls
+          sudo docker stop $(sudo docker ps -a -q)
+          cd infra/
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
