@@ -13,18 +13,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    '[::1]',
-    'testserver',
-    '158.160.20.62',
-    '0.0.0.0',
-    # os.environ['allowed_host_1'],
-    # os.environ['allowed_host_2'],
-    # os.environ['allowed_host_3'],
-    # os.environ['allowed_host_4'],
-    # os.environ['allowed_host_5'],
-    # os.environ['allowed_host_6'],
+    # 'localhost',
+    # '127.0.0.1',
+    # '[::1]',
+    # 'testserver',
+    # '158.160.20.62',
+    # '0.0.0.0',
+    os.environ['allowed_host_1'],
+    os.environ['allowed_host_2'],
+    os.environ['allowed_host_3'],
+    os.environ['allowed_host_4'],
+    os.environ['allowed_host_5'],
+    os.environ['allowed_host_6'],
 ]
 
 
