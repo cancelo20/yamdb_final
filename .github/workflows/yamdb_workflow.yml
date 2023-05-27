@@ -3,12 +3,12 @@ name: Django-app workflow
 on: [push]
 
 env:
-  allowed_host_1: ${{ secrets.ALLOWED_HOST_1 }}
-  allowed_host_2: ${{ secrets.ALLOWED_HOST_2 }}
-  allowed_host_3: ${{ secrets.ALLOWED_HOST_3 }}
-  allowed_host_4: ${{ secrets.ALLOWED_HOST_4 }}
-  allowed_host_5: ${{ secrets.ALLOWED_HOST_5 }}
-  allowed_host_6: ${{ secrets.ALLOWED_HOST_6 }}
+  ALLOWED_HOST_1: ${{ secrets.ALLOWED_HOST_1 }}
+  ALLOWED_HOST_2: ${{ secrets.ALLOWED_HOST_2 }}
+  ALLOWED_HOST_3: ${{ secrets.ALLOWED_HOST_3 }}
+  ALLOWED_HOST_4: ${{ secrets.ALLOWED_HOST_4 }}
+  ALLOWED_HOST_5: ${{ secrets.ALLOWED_HOST_5 }}
+  ALLOWED_HOST_6: ${{ secrets.ALLOWED_HOST_6 }}
 
 jobs:
   tests:
@@ -64,13 +64,6 @@ jobs:
     needs: build_and_push_to_docker_hub
     steps:
     - name: executing remote ssh commands to deploy
-      env:
-        allowed_host_1: ${{ secrets.ALLOWED_HOST_1 }}
-        allowed_host_2: ${{ secrets.ALLOWED_HOST_2 }}
-        allowed_host_3: ${{ secrets.ALLOWED_HOST_3 }}
-        allowed_host_4: ${{ secrets.ALLOWED_HOST_4 }}
-        allowed_host_5: ${{ secrets.ALLOWED_HOST_5 }}
-        allowed_host_6: ${{ secrets.ALLOWED_HOST_6 }}
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SERVER_HOST }}

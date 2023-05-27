@@ -19,12 +19,12 @@ ALLOWED_HOSTS = [
     # 'testserver',
     # '158.160.20.62',
     # '0.0.0.0',
-    os.environ['allowed_host_1'],
-    os.environ['allowed_host_2'],
-    os.environ['allowed_host_3'],
-    os.environ['allowed_host_4'],
-    os.environ['allowed_host_5'],
-    os.environ['allowed_host_6'],
+    os.environ['ALLOWED_HOST_1'],
+    os.environ['ALLOWED_HOST_2'],
+    os.environ['ALLOWED_HOST_3'],
+    os.environ['ALLOWED_HOST_4'],
+    os.environ['ALLOWED_HOST_5'],
+    os.environ['ALLOWED_HOST_6'],
 ]
 
 
