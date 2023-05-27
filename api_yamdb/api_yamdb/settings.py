@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SECRET_KEY = os.getenv('SECRET_KEY', default='hhz7l-ltdismtf@bzyz+rple7*s*w$jak%whj@(@u0eok^f9k4')
+SECRET_KEY = os.getenv('SECRET_KEY', default=os.environ.get('SECRET_KEY'))
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
