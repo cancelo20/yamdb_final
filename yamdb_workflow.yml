@@ -2,6 +2,15 @@ name: Django-app workflow
 
 on: [push]
 
+env:
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  ALLOWED_HOST_1: ${{ secrets.ALLOWED_HOST_1 }}
+  ALLOWED_HOST_2: ${{ secrets.ALLOWED_HOST_2 }}
+  ALLOWED_HOST_3: ${{ secrets.ALLOWED_HOST_3 }}
+  ALLOWED_HOST_4: ${{ secrets.ALLOWED_HOST_4 }}
+  ALLOWED_HOST_5: ${{ secrets.ALLOWED_HOST_5 }}
+  ALLOWED_HOST_6: ${{ secrets.ALLOWED_HOST_6 }}
+
 jobs:
   tests:
     runs-on: ubuntu-latest
