@@ -1,7 +1,6 @@
 import os
 from datetime import timedelta
 from pathlib import Path
-import secrets
 
 from dotenv import load_dotenv
 
