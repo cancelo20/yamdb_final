@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+ALLOWED_HOSTS_1 = os.environ['allowed_host_1']
+
 SECRET_KEY = os.getenv('SECRET_KEY', default='hhz7l-ltdismtf@bzyz+rple7*s*w$jak%whj@(@u0eok^f9k4')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    os.environ['allowed_host_1'],
+    ALLOWED_HOSTS_1,
     os.environ['allowed_host_2'],
     os.environ['allowed_host_3'],
     os.environ['allowed_host_4'],
