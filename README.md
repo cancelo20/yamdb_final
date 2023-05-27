@@ -65,3 +65,5 @@ POSTGRES_USER = postgres
 POSTGRES_PASSWORD = postgres
 DB_HOST = db
 DB_PORT = 5432
+
+IP сервера: 158.160.20.62
